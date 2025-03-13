@@ -4,15 +4,17 @@
   "holonomicMode": true,
   "pathFolders": [
     "Bot_Start_Blue",
-    "Bot_Start_Red",
     "Mid_Start_Blue",
-    "Mid_Start_Red",
-    "Right_Intake_start",
+    "Left_Intake_start",
     "Reef_to_intake",
-    "Top_Start_Blue",
-    "Top_Start_Red"
+    "Right_Intake_start",
+    "Top_Start_Blue"
   ],
-  "autoFolders": [],
+  "autoFolders": [
+    "Bottom Auto",
+    "Mid Auto",
+    "Top Auto"
+  ],
   "defaultMaxVel": 3.0,
   "defaultMaxAccel": 3.0,
   "defaultMaxAngVel": 540.0,

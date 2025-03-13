@@ -7,7 +7,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Bot_Start_Blue-GH"
+            "pathName": "Top_Start_Blue-IJ"
           }
         },
         {
@@ -25,7 +25,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "GH-Right_Intake"
+            "pathName": "JI-Left_Intake"
           }
         },
         {
@@ -37,7 +37,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Intake-Reef_CD"
+            "pathName": "Left_Intake-Reef_AB"
           }
         },
         {
@@ -50,6 +50,6 @@
     }
   },
   "resetOdom": true,
-  "folder": null,
+  "folder": "Top Auto",
   "choreoAuto": false
 }

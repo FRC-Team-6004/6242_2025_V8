@@ -1,0 +1,55 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Bot_Start_Blue-GH"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.5
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "GrabOut"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "GH-Right_Intake"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 1.5
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Intake-Reef_EF"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "GrabOut"
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": "Bottom Auto",
+  "choreoAuto": false
+}
