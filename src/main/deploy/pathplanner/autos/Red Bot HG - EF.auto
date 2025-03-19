@@ -7,7 +7,13 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Bot_Start_Blue-IJ"
+            "pathName": "Mid_Red_Start_GH"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "ArmUp"
           }
         },
         {
@@ -25,7 +31,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "JI-Left_Intake"
+            "pathName": "GH-Right_Intake"
           }
         },
         {
@@ -37,7 +43,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Intake-Reef_LK"
+            "pathName": "Intake-Reef_EF"
           }
         },
         {

@@ -50,6 +50,6 @@
     }
   },
   "resetOdom": true,
-  "folder": "Bottom Auto",
+  "folder": null,
   "choreoAuto": false
 }

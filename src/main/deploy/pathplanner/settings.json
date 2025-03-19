@@ -4,11 +4,14 @@
   "holonomicMode": true,
   "pathFolders": [
     "Bot_Start_Blue",
+    "Bot_Start_Red",
     "Mid_Start_Blue",
-    "Left_Intake_start",
+    "Mid_Start_Red",
+    "New Folder",
     "Reef_to_intake",
     "Right_Intake_start",
-    "Top_Start_Blue"
+    "Top_Start_Blue",
+    "Top_Start_Red"
   ],
   "autoFolders": [
     "Bottom Auto",
