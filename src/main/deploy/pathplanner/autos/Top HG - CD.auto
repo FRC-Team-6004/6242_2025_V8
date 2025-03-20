@@ -5,6 +5,12 @@
     "data": {
       "commands": [
         {
+          "type": "named",
+          "data": {
+            "name": "ArmUp"
+          }
+        },
+        {
           "type": "path",
           "data": {
             "pathName": "Top_Start_Blue-GH"
@@ -50,6 +56,6 @@
     }
   },
   "resetOdom": true,
-  "folder": null,
+  "folder": "Top Auto",
   "choreoAuto": false
 }

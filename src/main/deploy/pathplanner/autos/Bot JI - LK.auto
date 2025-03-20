@@ -5,11 +5,17 @@
     "data": {
       "commands": [
         {
+          "type": "named",
+          "data": {
+            "name": "ArmUp"
+          }
+        },
+        {
           "type": "path",
           "data": {
             "pathName": "Bot_Start_Blue-IJ"
           }
-        },
+        },        
         {
           "type": "wait",
           "data": {
@@ -50,6 +56,6 @@
     }
   },
   "resetOdom": true,
-  "folder": null,
+  "folder": "Bottom Auto",
   "choreoAuto": false
 }
