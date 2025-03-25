@@ -7,12 +7,17 @@
     "Bot_Start_Red",
     "Mid_Start_Blue",
     "Mid_Start_Red",
-    "Right_Intake_start",
+    "New Folder",
     "Reef_to_intake",
+    "Right_Intake_start",
     "Top_Start_Blue",
     "Top_Start_Red"
   ],
-  "autoFolders": [],
+  "autoFolders": [
+    "Bottom Auto",
+    "Mid Auto",
+    "Top Auto"
+  ],
   "defaultMaxVel": 3.0,
   "defaultMaxAccel": 3.0,
   "defaultMaxAngVel": 540.0,

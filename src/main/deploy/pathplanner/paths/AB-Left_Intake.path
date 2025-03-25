@@ -3,25 +3,41 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 7.6,
-        "y": 6.0
+        "x": 3.5230483271375466,
+        "y": 4.00169941582581
       },
       "prevControl": null,
       "nextControl": {
-        "x": 6.5632277397260275,
-        "y": 6.00087756849315
+        "x": 2.292777482740308,
+        "y": 4.104221986192246
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 6.0,
-        "y": 6.0
+        "x": 1.882687201274562,
+        "y": 5.520897503983005
       },
       "prevControl": {
-        "x": 7.138784246575342,
-        "y": 6.030928938356165
+        "x": 1.7522039298990972,
+        "y": 4.840520446096654
+      },
+      "nextControl": {
+        "x": 2.103884621721449,
+        "y": 6.674284053456059
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 0.8108603292618162,
+        "y": 7.552708443972384
+      },
+      "prevControl": {
+        "x": 0.9471074169106696,
+        "y": 7.343097539897225
       },
       "nextControl": null,
       "isLocked": false,
@@ -42,13 +58,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 179.33517330007797
+    "rotation": 125.09581678702612
   },
   "reversed": false,
-  "folder": null,
+  "folder": "Reef_to_intake",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": -179.49105635963778
+    "rotation": 0.8184554616886339
   },
   "useDefaultConstraints": true
 }

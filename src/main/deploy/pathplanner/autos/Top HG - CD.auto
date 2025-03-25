@@ -5,9 +5,15 @@
     "data": {
       "commands": [
         {
+          "type": "named",
+          "data": {
+            "name": "ArmUp"
+          }
+        },
+        {
           "type": "path",
           "data": {
-            "pathName": "Bot_Start_Blue-GH"
+            "pathName": "Top_Start_Blue-GH"
           }
         },
         {
@@ -37,7 +43,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "Intake-Reef_CD"
+            "pathName": "Intake-Reef_AB"
           }
         },
         {
@@ -50,6 +56,6 @@
     }
   },
   "resetOdom": true,
-  "folder": null,
+  "folder": "Top Auto",
   "choreoAuto": false
 }

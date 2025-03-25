@@ -1,0 +1,61 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "ArmUp"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Mid_Start_Blue-IJ"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 0.5
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "GrabOut"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "JI-Left_Intake"
+          }
+        },
+        {
+          "type": "wait",
+          "data": {
+            "waitTime": 1.5
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Left_Intake-Reef_AB"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "GrabOut"
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": "Mid Auto",
+  "choreoAuto": false
+}

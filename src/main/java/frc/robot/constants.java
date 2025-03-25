@@ -35,7 +35,7 @@ public class constants {
         public static final double Pivot_SPEED_DOWN = 0.25;
         public static final double Pivot_SPEED_UP = -0.25;
         public static final double Pivot_HOLD_DOWN = 0;
-        public static final double Pivot_HOLD_UP = .075;
+        public static final double Pivot_HOLD_UP = 0.1;
       }
 } ;
 
