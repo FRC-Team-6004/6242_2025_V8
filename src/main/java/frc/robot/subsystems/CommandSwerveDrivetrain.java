@@ -29,7 +29,33 @@ import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine;
 
 import frc.robot.generated.TunerConstants.TunerSwerveDrivetrain;
 
+import edu.wpi.first.wpilibj.smartdashboard.Field2d;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import edu.wpi.first.math.geometry.Pose2d;
+
+//photon
+import java.util.Optional;
+import java.util.function.Supplier;
+
+import org.photonvision.EstimatedRobotPose;
+import org.photonvision.PhotonCamera;
+import org.photonvision.PhotonPoseEstimator;
+import org.photonvision.PhotonPoseEstimator.PoseStrategy;
+import org.photonvision.estimation.VisionEstimation;
+import org.photonvision.proto.Photon;
+import org.photonvision.targeting.PhotonPipelineResult;
+import edu.wpi.first.apriltag.AprilTagFieldLayout;
+import edu.wpi.first.apriltag.AprilTagFields;
+import edu.wpi.first.math.Matrix;
+import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.math.geometry.Rotation3d;
+import edu.wpi.first.math.geometry.Transform3d;
+import edu.wpi.first.math.geometry.Translation3d;
+import edu.wpi.first.math.numbers.N1;
+import edu.wpi.first.math.numbers.N3;
+import edu.wpi.first.math.util.Units;
+import frc.robot.constants.VisionConstants;
 
 /**
  * Class that extends the Phoenix 6 SwerveDrivetrain class and implements
@@ -39,7 +65,8 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
     private static final double kSimLoopPeriod = 0.005; // 5 ms
     private Notifier m_simNotifier = null;
     private double m_lastSimTime;
-
+    private Field2d field = new Field2d();
+    
     /* Blue alliance sees forward as 0 degrees (toward red alliance wall) */
     private static final Rotation2d kBlueAlliancePerspectiveRotation = Rotation2d.kZero;
     /* Red alliance sees forward as 180 degrees (toward blue alliance wall) */
@@ -247,6 +274,20 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
                 m_hasAppliedOperatorPerspective = true;
             });
         }
+
+        var latestResults = camera.getAllUnreadResults();
+         for(PhotonPipelineResult result : latestResults) {
+             Optional<EstimatedRobotPose> poseData = visionEstimator.update(result);
+             System.out.println(poseData.isPresent());
+             if (poseData.isPresent()) {
+                 EstimatedRobotPose estimatedPose = poseData.get();
+                 System.out.println("processing pose at " + estimatedPose.timestampSeconds);
+                 System.out.println(estimatedPose.estimatedPose.toPose2d());
+                 addVisionMeasurement(estimatedPose.estimatedPose.toPose2d(), Utils.getCurrentTimeSeconds());
+             }
+         }    
+         field.setRobotPose(getState().Pose);
+         SmartDashboard.putData(field);
     }
 
     private void startSimThread() {
@@ -325,5 +366,23 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
         } catch (Exception ex) {
             DriverStation.reportError("Failed to load PathPlanner config and configure AutoBuilder", ex.getStackTrace());
         }
+    }
+
+    // PHOTONVISION STUFF
+    private final PhotonCamera camera = new PhotonCamera(VisionConstants.CAM_NAME);
+    private final PhotonPoseEstimator visionEstimator = new PhotonPoseEstimator(
+        AprilTagFieldLayout.loadField(AprilTagFields.k2025ReefscapeAndyMark), 
+        PoseStrategy.MULTI_TAG_PNP_ON_COPROCESSOR, 
+        new Transform3d(
+            new Translation3d(
+                Units.inchesToMeters(.25), 
+                Units.inchesToMeters(0.125), 
+                Units.inchesToMeters(7.5)),
+            new Rotation3d(0, Units.degreesToRadians(5), 0)
+        )
+    );
+
+    public PhotonCamera getFrontCamera() {
+        return camera;
     }
 }

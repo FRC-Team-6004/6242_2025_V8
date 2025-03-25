@@ -37,6 +37,7 @@ import com.pathplanner.lib.events.EventTrigger;
 import com.pathplanner.lib.path.PathPlannerPath;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.commands.AlignToTagCommand;
 
 public class RobotContainer {
     public final ClimbSub climbSubsytem = new ClimbSub();
@@ -117,7 +118,16 @@ public class RobotContainer {
         op.leftTrigger().whileTrue(new CorAlOut(coralSubsytem));
         op.rightTrigger().whileTrue(new CorAlIn(coralSubsytem));
 
-
+        joystick.leftTrigger().whileTrue(
+             new AlignToTagCommand(
+                 drivetrain, 
+                 drivetrain.getFrontCamera(), 
+                 0, 
+                 0, 
+                 0, 
+                 12
+                 )
+             );
 
     }
 

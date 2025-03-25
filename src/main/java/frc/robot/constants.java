@@ -1,5 +1,9 @@
 package frc.robot;
 
+import frc.robot.generated.TunerConstants;
+ 
+import static edu.wpi.first.units.Units.*;
+
 public class constants {
 
     public static final class ClimbConstants {
@@ -37,6 +41,19 @@ public class constants {
         public static final double Pivot_HOLD_DOWN = 0;
         public static final double Pivot_HOLD_UP = 0.1;
       }
+
+      public final class VisionConstants {
+        public static final String CAM_NAME="Replace Me";
+    
+      }
+
+      public static class SwerveConstants {
+        public static final double kMaxSpeed = TunerConstants.kSpeedAt12Volts.in(MetersPerSecond); // kSpeedAt12Volts desired top speed
+        public static final double kMaxAngularRate = RotationsPerSecond.of(0.75).in(RadiansPerSecond); // 3/4 of a rotation per second max angular velocity
+
+        public static final double kTranslationalDeadband = kMaxSpeed * 0.1;
+        public static final double kRotationalDeadband = kMaxAngularRate * 0.1;
+  }
 } ;
 
 
